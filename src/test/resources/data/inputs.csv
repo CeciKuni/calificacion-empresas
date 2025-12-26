@@ -1,0 +1,4 @@
+documento,facturacionAnual,descripcion
+27325760457,600000000,Caso aprobado - Todos los controles pasan
+27258680524,500000000,Caso rechazado - Control1 con resultado 2
+20111222333,700000000,Error 500 - Simula error interno del servidor

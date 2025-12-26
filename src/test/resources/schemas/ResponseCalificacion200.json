@@ -1,0 +1,25 @@
+﻿{
+  "identificacion": {
+    "numero_documento": "string"
+  },
+  "politica": {
+    "descripcion": "string"
+  },
+  "estado": {
+    "descripcion": "string"
+  },
+  "oferta": {
+    "detalle_oferta": [
+      {
+        "producto": "string",
+        "monto": 0
+      }
+    ]
+  },
+  "controles": [
+    {
+      "nombre": "string",
+      "resultado": 0
+    }
+  ]
+}

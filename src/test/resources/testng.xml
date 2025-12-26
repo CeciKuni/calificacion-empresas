@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite de Pruebas">
+    <listeners>
+        <listener class-name="com.ckuniyoshi.utils.TestListener" />
+    </listeners>
+    <test name="Pruebas de Calificación">
+        <classes>
+            <class name="com.ckuniyoshi.tests.CalificacionEmpresas" />
+        </classes>
+    </test>
+</suite>
