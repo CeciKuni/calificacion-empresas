@@ -75,25 +75,25 @@ jobs:
           fi
 
           if [ ! -f "public/index.html" ]; then
-            cat << 'EOF' > public/index.html
-            <!doctype html>
-            <html lang="en">
-            <head>
-              <meta charset="utf-8" />
-              <meta name="viewport" content="width=device-width, initial-scale=1" />
-              <title>Test Report</title>
-              <style>
-                body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.5; }
-                h1 { margin-bottom: 0.5rem; }
-                a { color: #0f62fe; }
-              </style>
-            </head>
-            <body>
-              <h1>Calificacion Empresas - Test Report</h1>
-              <p>No HTML report was generated for this run.</p>
-            </body>
-            </html>
-            EOF
+            {
+              echo '<!doctype html>'
+              echo '<html lang="en">'
+              echo '<head>'
+              echo '  <meta charset="utf-8" />'
+              echo '  <meta name="viewport" content="width=device-width, initial-scale=1" />'
+              echo '  <title>Test Report</title>'
+              echo '  <style>'
+              echo '    body { font-family: Arial, sans-serif; margin: 2rem; line-height: 1.5; }'
+              echo '    h1 { margin-bottom: 0.5rem; }'
+              echo '    a { color: #0f62fe; }'
+              echo '  </style>'
+              echo '</head>'
+              echo '<body>'
+              echo '  <h1>Calificacion Empresas - Test Report</h1>'
+              echo '  <p>No HTML report was generated for this run.</p>'
+              echo '</body>'
+              echo '</html>'
+            } > public/index.html
           fi
 
       - name: Upload GitHub Pages artifact
