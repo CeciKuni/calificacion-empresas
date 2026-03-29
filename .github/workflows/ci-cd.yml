@@ -39,7 +39,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: test-report
+          name: test-report-${{ github.run_attempt }}
           if-no-files-found: warn
           path: |
             target/surefire-reports/**
@@ -62,8 +62,11 @@ jobs:
       - name: Download test artifacts
         uses: actions/download-artifact@v4
         with:
-          name: test-report
+          name: test-report-${{ github.run_attempt }}
           path: report-artifact
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
 
       - name: Prepare static site
         shell: bash
@@ -99,8 +102,11 @@ jobs:
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          name: github-pages-${{ github.run_attempt }}
           path: public
 
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-${{ github.run_attempt }}
